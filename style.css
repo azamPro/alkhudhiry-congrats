@@ -1,96 +1,113 @@
+/* reset بسيط */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-
-    margin: 0;
-    padding: 15px;
-    background-color: #f5f5f5;
-    font-family: 'Tajawal', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
+/* الجزء الأبيض */
 .container {
-    display: flex;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 1100px;
-    width: 90%;
+  display: flex;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
 }
 
+/* النموذج */
 .form-section {
-    flex: 2;
+  flex: 1 1 320px;
+  background: #fafafa;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.form-section div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    gap: 25px;
-    background-color: #f9f9f9;
-    min-width: 300px;
+    width: 100%;
+    gap: 1rem;
 }
 
+.form-section input,
+.form-section button {
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 8px;
+}
 
 .form-section input {
-    padding: 15px 20px;
-    font-size: 22px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 80%;
-    text-align: center;
-    transition: border-color 0.3s ease ;
+  border: 2px solid #ddd;
+  text-align: center;
+  transition: border-color 0.25s;
+}
+
+.form-section input:focus {
+  border-color: #3e783e;
+  outline: none;
 }
 
 .form-section button {
-    width: 90%;
-    padding: 15px 25px;
-    font-size: 20px;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  color: #fff;
+  background: #3e783e; /* نفس الأخضر الرئيس */
+  cursor: pointer;
+  transition: background 0.25s, transform 0.18s;
 }
-
 
 .form-section button:hover {
-    background-color: #27642a;
-    transform: scale(1.05);
+  background: #2d5b2d;
+  transform: scale(1.04);
 }
 
-
+/* البطاقة */
 .card-section {
-    flex: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  flex: 2 1 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* جعل الـ canvas مرن */
 canvas {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    border-radius: 10px;
-    border: 2px solid #ddd;
+  display: block;
+  max-width: 80%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
 }
 
+/* موبايل */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .card-section {
-        width: 100%;
-        padding: 10px;
-    }
-
-    canvas {
-        width: 100% !important;  /* Force the canvas to shrink */
-        height: auto !important; /* Force the height to adjust */
-    }
+  .container {
+    flex-direction: column;
+  }
+  .form-section {
+    display: inline-block;
+    flex: auto;
+}
+.form-section {
+    display: inline-block;
+  justify-content: start;
 }
 
+}
