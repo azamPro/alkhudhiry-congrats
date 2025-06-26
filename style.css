@@ -87,6 +87,13 @@ body {
   align-items: center;
 }
 
+.footer{
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
 /* جعل الـ canvas مرن */
 canvas {
   display: block;
